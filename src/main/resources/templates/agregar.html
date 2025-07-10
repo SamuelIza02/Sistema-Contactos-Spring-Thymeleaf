@@ -1,42 +1,59 @@
 <!DOCTYPE html>
+<!-- Página para agregar un nuevo contacto -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- Incluye el fragmento de cabecero con título 'Agregar' -->
 <head th:replace="~{fragmentos/cabecero::cabecero-seccion(titulo='Agregar')}">
 </head>
 <body>
-<!-- Div es del menu de navegacion-->
+<!-- Incluye el menú de navegación desde fragmentos -->
 <div th:replace="~{fragmentos/navegacion::navegacion-seccion}"/>
 
+<!-- Contenedor principal de la página -->
 <div class="container">
+    <!-- Título de la página centrado -->
     <div class="container text-center" style="margin:30px">
         <h3>Agregar Contacto</h3>
     </div>
+    
+    <!-- Contenedor del formulario -->
     <div class="container">
+        <!-- Formulario que envía datos por POST a /agregar -->
+        <!-- modelAttribute vincula el formulario con el objeto contactoForma -->
         <form action="/agregar" modelAttribute="contactoForma" method="post">
+            
+            <!-- Campo de entrada para el nombre -->
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control"
                        id="nombre" name="nombre" required="true">
             </div>
+            
+            <!-- Campo de entrada para el celular -->
             <div class="mb-3">
                 <label for="celular" class="form-label">Celular</label>
                 <input type="text" class="form-control"
                        id="celular" name="celular" required="true">
             </div>
+            
+            <!-- Campo de entrada para el email (opcional) -->
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control"
                        id="email" name="email">
             </div>
+            
+            <!-- Botones de acción centrados -->
             <div class="text-center">
+                <!-- Botón para enviar el formulario -->
                 <button type="submit" class="btn btn-warning btn-sm me-3">Agregar</button>
+                <!-- Botón para regresar a la página principal -->
                 <a href="/" class="btn btn-danger btn-sm">Regresar</a>
             </div>
         </form>
     </div>
 </div>
 
-
-
+<!-- Incluye el fragmento de pie de página con scripts de Bootstrap -->
 <div th:replace="~{fragmentos/pie-pagina::pie-pagina-seccion}"/>
 </body>
 </html>

@@ -1,6 +1,19 @@
 <!DOCTYPE html>
+<!-- Fragmento reutilizable para el pie de página con scripts -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
+<!-- 
+    Fragmento Thymeleaf para el pie de página
+    Incluye los scripts necesarios de Bootstrap
+    th:remove="tag" elimina este div contenedor al renderizar
+-->
 <div th:fragment="pie-pagina-seccion" th:remove="tag">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <!-- 
+        Script de Bootstrap JavaScript desde CDN
+        Incluye funcionalidades como modales, dropdowns, navegación responsiva, etc.
+        Se carga al final para mejorar el rendimiento de la página
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" 
+            crossorigin="anonymous"></script>
 </div>
